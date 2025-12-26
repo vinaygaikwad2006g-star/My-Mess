@@ -1,0 +1,39 @@
+# Dependencies and sensitive files
+node_modules/
+.env
+.env.local
+.env.*.local
+
+# Firebase
+firebase-config.js
+.firebase/
+.firebaserc
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Git
+.git/
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build files
+dist/
+build/
+.cache/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Config
+.env.example
+firebase.json

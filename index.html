@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Mess – Student Mess Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR / HEADER -->
+<nav class="navbar">
+  <div class="nav-container">
+    <h2 class="logo" id="scrollToTop">My Mess</h2>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO / HOME SECTION -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Welcome to My Mess</h1>
+    <p class="hero-subtitle">Smart Student Mess Management System</p>
+    <p class="hero-description">Manage meals, attendance, rebates, and payments all in one place</p>
+    
+    <div class="button-group">
+      <button class="btn btn-primary" id="studentLoginBtn">Student Login</button>
+      <button class="btn btn-secondary" id="adminLoginBtn">Admin Login</button>
+    </div>
+  </div>
+</section>
+
+<!-- LOGIN FORMS CONTAINER -->
+<div class="forms-container" id="formsContainer">
+  
+  <!-- STUDENT LOGIN FORM -->
+  <div class="form-section" id="studentLoginForm">
+    <div class="form-card">
+      <div class="form-header">
+        <h2>Student Login</h2>
+        <button class="close-btn" onclick="closeAllForms()">×</button>
+      </div>
+      
+      <form class="login-form" id="studentForm">
+        <div class="form-group">
+          <label for="studentId">Student ID / Email</label>
+          <input 
+            type="text" 
+            id="studentId" 
+            placeholder="Enter your Student ID or Email" 
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="studentPassword">Password</label>
+          <input 
+            type="password" 
+            id="studentPassword" 
+            placeholder="Enter your password" 
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Login</button>
+      </form>
+
+      <p class="form-footer">
+        Forgot your password? <a href="#">Reset here</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ADMIN LOGIN FORM -->
+  <div class="form-section" id="adminLoginForm">
+    <div class="form-card">
+      <div class="form-header">
+        <h2>Admin Login</h2>
+        <button class="close-btn" onclick="closeAllForms()">×</button>
+      </div>
+      
+      <form class="login-form" id="adminLoginFormTag">
+        <div class="form-group">
+          <label for="adminEmail">Admin Email</label>
+          <input 
+            type="email" 
+            id="adminEmail" 
+            placeholder="Enter your email" 
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="adminPassword">Password</label>
+          <input 
+            type="password" 
+            id="adminPassword" 
+            placeholder="Enter your password" 
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Login</button>
+      </form>
+
+      <div class="form-actions">
+        <p class="form-footer">
+          New admin? <span class="link" onclick="switchToAdminSignup()">Create an account</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN SIGNUP FORM -->
+  <div class="form-section" id="adminSignupForm">
+    <div class="form-card">
+      <div class="form-header">
+        <h2>Admin Sign Up</h2>
+        <button class="close-btn" onclick="closeAllForms()">×</button>
+      </div>
+      
+      <form class="login-form" id="adminSignupFormTag">
+        <div class="form-group">
+          <label for="adminName">Full Name</label>
+          <input 
+            type="text" 
+            id="adminName" 
+            placeholder="Enter your full name" 
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="signupEmail">Email</label>
+          <input 
+            type="email" 
+            id="signupEmail" 
+            placeholder="Enter your email" 
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="adminRegistrationCode">Admin Registration Code</label>
+          <input 
+            type="password" 
+            id="adminRegistrationCode" 
+            placeholder="Enter admin registration code" 
+            required
+          >
+          <small style="color: #7f8c8d; margin-top: 5px; display: block;">
+            (Contact your institute administrator for the registration code)
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input 
+            type="password" 
+            id="signupPassword" 
+            placeholder="Create a password" 
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input 
+            type="password" 
+            id="confirmPassword" 
+            placeholder="Confirm your password" 
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+      </form>
+
+      <p class="form-footer">
+        Already have an account? <span class="link" onclick="switchToAdminLogin()">Login here</span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ABOUT US SECTION -->
+<section id="about" class="about">
+  <div class="about-container">
+    <h2 class="section-title">About My Mess</h2>
+    
+    <div class="about-content">
+      <div class="about-intro">
+        <p>
+          <strong>My Mess</strong> is a comprehensive digital platform designed to revolutionize student mess management. 
+          We provide an all-in-one solution that simplifies daily operations, enhances transparency, and ensures seamless 
+          communication between students and mess administrators.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🍽️</div>
+          <h3>Meal Management</h3>
+          <p>Track daily meal entries, manage menus, and handle dietary preferences with ease.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3>Attendance Tracking</h3>
+          <p>Monitor student attendance automatically and maintain accurate records for accountability.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Payment Management</h3>
+          <p>Process monthly payments, manage rebates for absent days, and ensure transparent billing.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Data & Reports</h3>
+          <p>Generate detailed reports, analyze spending patterns, and make informed decisions.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h3>Security & Privacy</h3>
+          <p>Your data is secure with industry-standard encryption and privacy controls.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>User-Friendly Interface</h3>
+          <p>Intuitive design that works seamlessly on mobile, tablet, and desktop devices.</p>
+        </div>
+      </div>
+
+      <div class="about-benefits">
+        <h3>Why Choose My Mess?</h3>
+        <ul class="benefits-list">
+          <li><strong>For Students:</strong> Easy meal tracking, transparent rebate calculations, convenient payments, and instant notifications.</li>
+          <li><strong>For Administrators:</strong> Automated attendance, simplified billing, reduced manual work, and comprehensive analytics.</li>
+          <li><strong>For Everyone:</strong> Reduced disputes, better organization, improved efficiency, and enhanced student experience.</li>
+        </ul>
+      </div>
+
+      <p class="about-closing">
+        My Mess is your trusted partner in transforming traditional mess management into a modern, efficient, and transparent system.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 My Mess. All Rights Reserved.</p>
+    <p class="footer-tagline">Made for Students, by Students</p>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+
+<!-- FIREBASE SDK -->
+<script type="module">
+  // Import Firebase modules
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+
+  // ===== REPLACE WITH YOUR FIREBASE CONFIG =====
+  const firebaseConfig = {
+    apiKey: "AIzaSyBwPtcUrPHNalrmdCTeUaxN2EhYG07kgz8",
+    authDomain: "my-mess-99d78.firebaseapp.com",
+    projectId: "my-mess-99d78",
+    storageBucket: "my-mess-99d78.firebasestorage.app",
+    messagingSenderId: "74985547446",
+    appId: "1:74985547446:web:c78617a3dc02d747f1a817"
+  };
+  // ============================================
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  
+  // Initialize Auth and Firestore
+  window.auth = getAuth(app);
+  window.db = getFirestore(app);
+  
+  console.log("Firebase initialized successfully ✓");
+</script>
+
+</body>
+</html>

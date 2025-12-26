@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard – My Mess</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar dashboard-navbar">
+  <div class="nav-container">
+    <h2 class="logo" id="goHome">My Mess</h2>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#students" class="nav-link">Students</a></li>
+        <li><a href="#meals" class="nav-link">Meals</a></li>
+        <li><a href="#payments" class="nav-link">Payments</a></li>
+        <li><a href="#reports" class="nav-link">Reports</a></li>
+      </ul>
+      <button class="btn btn-logout" onclick="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<!-- DASHBOARD HEADER -->
+<div class="dashboard-header">
+  <div class="header-content">
+    <h1>Admin Dashboard</h1>
+    <p>Manage students, meals, payments, and view analytics</p>
+  </div>
+</div>
+
+<!-- MAIN DASHBOARD -->
+<div class="dashboard-container">
+  
+  <!-- STATS CARDS -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">👥</div>
+      <h3>Total Students</h3>
+      <p class="stat-value">156</p>
+      <span class="stat-label">Active members</span>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">💰</div>
+      <h3>Total Revenue</h3>
+      <p class="stat-value">₹3,73,440</p>
+      <span class="stat-label">This month</span>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">⏳</div>
+      <h3>Pending Payments</h3>
+      <p class="stat-value">₹45,600</p>
+      <span class="stat-label">From 23 students</span>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">📊</div>
+      <h3>Avg Attendance</h3>
+      <p class="stat-value">94%</p>
+      <span class="stat-label">Mess-wide</span>
+    </div>
+  </div>
+
+  <!-- STUDENTS MANAGEMENT -->
+  <section id="students" class="dashboard-section">
+    <div class="section-header">
+      <h2>Student Management</h2>
+      <button class="btn btn-primary" onclick="alert('Add Student feature coming soon!')">Add Student</button>
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search students by name, ID, or email..." class="search-input">
+      <button class="btn btn-secondary">Search</button>
+    </div>
+
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Status</th>
+          <th>Due Amount</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>S001</td>
+          <td>Rajesh Kumar</td>
+          <td>rajesh@college.edu</td>
+          <td>98765-43210</td>
+          <td><span class="badge badge-success">Active</span></td>
+          <td>₹0</td>
+          <td><button class="btn btn-sm">View</button></td>
+        </tr>
+        <tr>
+          <td>S002</td>
+          <td>Priya Singh</td>
+          <td>priya@college.edu</td>
+          <td>98765-43211</td>
+          <td><span class="badge badge-success">Active</span></td>
+          <td>₹2,100</td>
+          <td><button class="btn btn-sm">View</button></td>
+        </tr>
+        <tr>
+          <td>S003</td>
+          <td>Amit Patel</td>
+          <td>amit@college.edu</td>
+          <td>98765-43212</td>
+          <td><span class="badge badge-warning">Inactive</span></td>
+          <td>₹5,000</td>
+          <td><button class="btn btn-sm">View</button></td>
+        </tr>
+        <tr>
+          <td>S004</td>
+          <td>Sneha Gupta</td>
+          <td>sneha@college.edu</td>
+          <td>98765-43213</td>
+          <td><span class="badge badge-success">Active</span></td>
+          <td>₹1,500</td>
+          <td><button class="btn btn-sm">View</button></td>
+        </tr>
+        <tr>
+          <td>S005</td>
+          <td>Vikram Sharma</td>
+          <td>vikram@college.edu</td>
+          <td>98765-43214</td>
+          <td><span class="badge badge-success">Active</span></td>
+          <td>₹0</td>
+          <td><button class="btn btn-sm">View</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- MEAL MANAGEMENT -->
+  <section id="meals" class="dashboard-section">
+    <div class="section-header">
+      <h2>Meal Management</h2>
+      <button class="btn btn-primary" onclick="alert('Add Meal feature coming soon!')">Add Meal Entry</button>
+    </div>
+
+    <div class="meal-cards">
+      <div class="meal-card">
+        <div class="meal-type">🌅 Breakfast</div>
+        <div class="meal-info">
+          <p><strong>Menu:</strong> Bread, Eggs, Tea/Coffee</p>
+          <p><strong>Status:</strong> <span class="badge badge-success">Served Today</span></p>
+          <p><strong>Price:</strong> ₹40</p>
+        </div>
+      </div>
+
+      <div class="meal-card">
+        <div class="meal-type">🍽️ Lunch</div>
+        <div class="meal-info">
+          <p><strong>Menu:</strong> Rice, Curry, Vegetables</p>
+          <p><strong>Status:</strong> <span class="badge badge-success">Served Today</span></p>
+          <p><strong>Price:</strong> ₹60</p>
+        </div>
+      </div>
+
+      <div class="meal-card">
+        <div class="meal-type">🌙 Dinner</div>
+        <div class="meal-info">
+          <p><strong>Menu:</strong> Roti, Dal, Salad</p>
+          <p><strong>Status:</strong> <span class="badge badge-warning">Upcoming</span></p>
+          <p><strong>Price:</strong> ₹50</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAYMENTS SECTION -->
+  <section id="payments" class="dashboard-section">
+    <div class="section-header">
+      <h2>Payment Tracking</h2>
+      <button class="btn btn-primary" onclick="alert('Generate Invoice feature coming soon!')">Generate Invoices</button>
+    </div>
+
+    <div class="payment-overview">
+      <div class="payment-stat">
+        <h4>Total Collected</h4>
+        <p class="big-number">₹3,73,440</p>
+      </div>
+      <div class="payment-stat">
+        <h4>Pending</h4>
+        <p class="big-number danger">₹45,600</p>
+      </div>
+      <div class="payment-stat">
+        <h4>This Month Target</h4>
+        <p class="big-number">₹4,00,000</p>
+      </div>
+    </div>
+
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>S002</td>
+          <td>Priya Singh</td>
+          <td>₹2,100</td>
+          <td>Dec 30, 2025</td>
+          <td><span class="badge badge-warning">Pending</span></td>
+          <td><button class="btn btn-sm">Send Reminder</button></td>
+        </tr>
+        <tr>
+          <td>S003</td>
+          <td>Amit Patel</td>
+          <td>₹5,000</td>
+          <td>Dec 25, 2025</td>
+          <td><span class="badge badge-danger">Overdue</span></td>
+          <td><button class="btn btn-sm">Send Notice</button></td>
+        </tr>
+        <tr>
+          <td>S004</td>
+          <td>Sneha Gupta</td>
+          <td>₹1,500</td>
+          <td>Dec 30, 2025</td>
+          <td><span class="badge badge-warning">Pending</span></td>
+          <td><button class="btn btn-sm">Send Reminder</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- REPORTS SECTION -->
+  <section id="reports" class="dashboard-section">
+    <div class="section-header">
+      <h2>Reports & Analytics</h2>
+      <button class="btn btn-primary" onclick="alert('Download Report feature coming soon!')">Download Report</button>
+    </div>
+
+    <div class="report-cards">
+      <div class="report-card">
+        <h3>📈 Monthly Revenue</h3>
+        <p class="report-value">₹3,73,440</p>
+        <p class="report-change">↑ 12% from last month</p>
+      </div>
+
+      <div class="report-card">
+        <h3>📊 Attendance Rate</h3>
+        <p class="report-value">94%</p>
+        <p class="report-change">Average across all students</p>
+      </div>
+
+      <div class="report-card">
+        <h3>💳 Payment Success Rate</h3>
+        <p class="report-value">85%</p>
+        <p class="report-change">15% still pending</p>
+      </div>
+
+      <div class="report-card">
+        <h3>👥 Active Students</h3>
+        <p class="report-value">156</p>
+        <p class="report-change">5 new this month</p>
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <h3>Revenue Trend (Last 6 Months)</h3>
+      <div class="placeholder-chart">
+        <p>📊 Chart visualization will be implemented with backend integration</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 My Mess. All Rights Reserved.</p>
+    <p class="footer-tagline">Admin Portal</p>
+  </div>
+</footer>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

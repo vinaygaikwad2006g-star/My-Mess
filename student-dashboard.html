@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard – My Mess</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar dashboard-navbar">
+  <div class="nav-container">
+    <h2 class="logo" id="goHome">My Mess</h2>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#meals" class="nav-link">My Meals</a></li>
+        <li><a href="#payments" class="nav-link">Payments</a></li>
+        <li><a href="#attendance" class="nav-link">Attendance</a></li>
+      </ul>
+      <button class="btn btn-logout" onclick="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<!-- DASHBOARD HEADER -->
+<div class="dashboard-header">
+  <div class="header-content">
+    <h1>Welcome, <span id="studentName">Student</span>!</h1>
+    <p>Manage your meals, track attendance, and view payments</p>
+  </div>
+</div>
+
+<!-- MAIN DASHBOARD -->
+<div class="dashboard-container">
+  
+  <!-- STATS CARDS -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">🍽️</div>
+      <h3>Meals This Month</h3>
+      <p class="stat-value">24</p>
+      <span class="stat-label">Out of 25 days</span>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">💰</div>
+      <h3>Amount Due</h3>
+      <p class="stat-value">₹2,400</p>
+      <span class="stat-label">Due by 30th Dec</span>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">↩️</div>
+      <h3>Rebates</h3>
+      <p class="stat-value">₹200</p>
+      <span class="stat-label">For 1 absent day</span>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">📋</div>
+      <h3>Attendance</h3>
+      <p class="stat-value">96%</p>
+      <span class="stat-label">Great job!</span>
+    </div>
+  </div>
+
+  <!-- MEALS SECTION -->
+  <section id="meals" class="dashboard-section">
+    <div class="section-header">
+      <h2>My Meals</h2>
+      <select class="filter-select">
+        <option>This Month</option>
+        <option>Last Month</option>
+        <option>Custom Range</option>
+      </select>
+    </div>
+
+    <div class="meals-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Dinner</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dec 26, 2025</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td><span class="badge badge-success">Attended</span></td>
+          </tr>
+          <tr>
+            <td>Dec 25, 2025</td>
+            <td>✓</td>
+            <td>✗</td>
+            <td>✓</td>
+            <td><span class="badge badge-warning">Partial</span></td>
+          </tr>
+          <tr>
+            <td>Dec 24, 2025</td>
+            <td>✗</td>
+            <td>✗</td>
+            <td>✗</td>
+            <td><span class="badge badge-danger">Absent</span></td>
+          </tr>
+          <tr>
+            <td>Dec 23, 2025</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td><span class="badge badge-success">Attended</span></td>
+          </tr>
+          <tr>
+            <td>Dec 22, 2025</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td><span class="badge badge-success">Attended</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PAYMENTS SECTION -->
+  <section id="payments" class="dashboard-section">
+    <div class="section-header">
+      <h2>Payments & Billing</h2>
+      <button class="btn btn-primary" onclick="alert('Payment gateway coming soon!')">Make Payment</button>
+    </div>
+
+    <div class="payment-cards">
+      <div class="payment-card">
+        <h3>Current Month (December)</h3>
+        <div class="payment-details">
+          <div class="detail-row">
+            <span>Meals: 24 × ₹100</span>
+            <span class="price">₹2,400</span>
+          </div>
+          <div class="detail-row">
+            <span>Rebate for 1 absent day</span>
+            <span class="price discount">-₹100</span>
+          </div>
+          <div class="detail-row border-top">
+            <span><strong>Total Due</strong></span>
+            <span class="price total">₹2,300</span>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-full" style="margin-top: 20px;">Pay Now</button>
+      </div>
+
+      <div class="payment-card">
+        <h3>Previous Payments</h3>
+        <div class="payment-history">
+          <div class="history-item">
+            <div class="history-left">
+              <p class="history-date">Nov 30, 2025</p>
+              <p class="history-amount">₹2,400</p>
+            </div>
+            <span class="badge badge-success">Paid</span>
+          </div>
+          <div class="history-item">
+            <div class="history-left">
+              <p class="history-date">Oct 31, 2025</p>
+              <p class="history-amount">₹2,200</p>
+            </div>
+            <span class="badge badge-success">Paid</span>
+          </div>
+          <div class="history-item">
+            <div class="history-left">
+              <p class="history-date">Sep 30, 2025</p>
+              <p class="history-amount">₹2,500</p>
+            </div>
+            <span class="badge badge-success">Paid</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATTENDANCE SECTION -->
+  <section id="attendance" class="dashboard-section">
+    <div class="section-header">
+      <h2>Attendance Overview</h2>
+    </div>
+
+    <div class="attendance-container">
+      <div class="attendance-stats">
+        <div class="attendance-stat">
+          <h4>Total Days</h4>
+          <p class="big-number">25</p>
+        </div>
+        <div class="attendance-stat">
+          <h4>Present</h4>
+          <p class="big-number success">24</p>
+        </div>
+        <div class="attendance-stat">
+          <h4>Absent</h4>
+          <p class="big-number danger">1</p>
+        </div>
+        <div class="attendance-stat">
+          <h4>Percentage</h4>
+          <p class="big-number success">96%</p>
+        </div>
+      </div>
+
+      <div class="calendar-section">
+        <h3>December 2025</h3>
+        <div class="calendar">
+          <div class="calendar-day header">Sun</div>
+          <div class="calendar-day header">Mon</div>
+          <div class="calendar-day header">Tue</div>
+          <div class="calendar-day header">Wed</div>
+          <div class="calendar-day header">Thu</div>
+          <div class="calendar-day header">Fri</div>
+          <div class="calendar-day header">Sat</div>
+
+          <div class="calendar-day empty"></div>
+          <div class="calendar-day empty"></div>
+          <div class="calendar-day empty"></div>
+          <div class="calendar-day present">1</div>
+          <div class="calendar-day present">2</div>
+          <div class="calendar-day present">3</div>
+          <div class="calendar-day present">4</div>
+          <div class="calendar-day present">5</div>
+          <div class="calendar-day present">6</div>
+          <div class="calendar-day present">7</div>
+          <div class="calendar-day present">8</div>
+          <div class="calendar-day present">9</div>
+          <div class="calendar-day present">10</div>
+          <div class="calendar-day present">11</div>
+          <div class="calendar-day present">12</div>
+          <div class="calendar-day absent">13</div>
+          <div class="calendar-day present">14</div>
+          <div class="calendar-day present">15</div>
+          <div class="calendar-day present">16</div>
+          <div class="calendar-day present">17</div>
+          <div class="calendar-day present">18</div>
+          <div class="calendar-day present">19</div>
+          <div class="calendar-day present">20</div>
+          <div class="calendar-day present">21</div>
+          <div class="calendar-day present">22</div>
+          <div class="calendar-day present">23</div>
+          <div class="calendar-day present">24</div>
+          <div class="calendar-day present">25</div>
+          <div class="calendar-day present">26</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 My Mess. All Rights Reserved.</p>
+    <p class="footer-tagline">Student Portal</p>
+  </div>
+</footer>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
