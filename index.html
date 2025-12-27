@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#F4C430">
-  <title>My Mess – Student Mess Management System</title>
+  <meta name="theme-color" content="#FFD700">
+  <title>My Mess – Premium Student Mess Management</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,7 +12,10 @@
 <!-- NAVBAR / HEADER -->
 <nav class="navbar">
   <div class="nav-container">
-    <h2 class="logo" id="scrollToTop">My Mess</h2>
+    <a href="#home" class="logo-link" id="scrollToTop">
+      <img src="logo1.png" alt="My Mess Logo" class="logo-img" />
+      <span class="logo-text">My Mess</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#home" class="nav-link">Home</a></li>
       <li><a href="#about" class="nav-link">About Us</a></li>
@@ -20,46 +23,31 @@
   </div>
 </nav>
 
-<!-- HERO / HOME SECTION WITH SLIDESHOW & ANIMATED SVG BG -->
-<section id="home" class="hero hero-yellow-black">
-  <!-- Animated SVG background for high-end look -->
-  <svg class="hero-bg-svg" width="100%" height="100%" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;z-index:0;pointer-events:none;">
-    <defs>
-      <linearGradient id="yellowGrad" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#F4C430"/>
-        <stop offset="100%" stop-color="#FFD700"/>
-      </linearGradient>
-    </defs>
-    <path d="M0,400 Q360,300 720,400 T1440,400 L1440,600 L0,600 Z" fill="url(#yellowGrad)">
-      <animate attributeName="d" dur="8s" repeatCount="indefinite"
-        values="M0,400 Q360,300 720,400 T1440,400 L1440,600 L0,600 Z;
-                M0,420 Q360,350 720,380 T1440,420 L1440,600 L0,600 Z;
-                M0,400 Q360,300 720,400 T1440,400 L1440,600 L0,600 Z"/>
-    </path>
-  </svg>
+<!-- HERO / HOME SECTION WITH SLIDESHOW -->
+<section id="home" class="hero">
   <div class="slideshow-container">
     <div class="slide fade active">
-      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Delicious Food" />
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Delicious Food" />
       <div class="slide-caption">
-        <h1 class="hero-title">Welcome to My Mess</h1>
-        <p class="hero-subtitle">Smart Student Mess Management System</p>
-        <p class="hero-description">Enjoy healthy, tasty meals every day. Hassle-free management for students and admins!</p>
+        <h1 class="hero-title">My Mess</h1>
+        <p class="hero-subtitle">Student Mess Management</p>
+        <p class="hero-description">Smart management. Delicious meals. Seamless experience.</p>
       </div>
     </div>
     <div class="slide fade">
-      <img src="https://images.unsplash.com/photo-1516685018646-5499d0a7d42f?auto=format&fit=crop&w=900&q=80" alt="Happy Customers" />
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Happy Customers" />
       <div class="slide-caption">
-        <h1 class="hero-title">Happy Customers</h1>
-        <p class="hero-subtitle">Smiles Served Daily</p>
-        <p class="hero-description">See why students love our mess! Great food, great company, great experience.</p>
+        <h1 class="hero-title">Quality First</h1>
+        <p class="hero-subtitle">Fresh & Delicious</p>
+        <p class="hero-description">Premium ingredients. Professional preparation. Student-approved.</p>
       </div>
     </div>
     <div class="slide fade">
-      <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=900&q=80" alt="Fresh Ingredients" />
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80" alt="Fresh Ingredients" />
       <div class="slide-caption">
-        <h1 class="hero-title">Fresh & Nutritious</h1>
-        <p class="hero-subtitle">Quality You Can Taste</p>
-        <p class="hero-description">We use only the freshest ingredients for every meal, every day.</p>
+        <h1 class="hero-title">Easy Management</h1>
+        <p class="hero-subtitle">Admins. Students. Results.</p>
+        <p class="hero-description">Streamlined. Transparent. Efficient.</p>
       </div>
     </div>
     <!-- Slideshow navigation -->
@@ -70,10 +58,11 @@
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
     </div>
-    <div class="button-group hero-btns">
-      <button class="btn btn-primary" id="studentLoginBtn">Student Login</button>
-      <button class="btn btn-secondary" id="adminLoginBtn">Admin Login</button>
-    </div>
+  </div>
+  <!-- Login buttons moved BELOW slideshow -->
+  <div class="button-group hero-btns">
+    <button class="btn btn-primary" id="studentLoginBtn">Student Login</button>
+    <button class="btn btn-secondary" id="adminLoginBtn">Admin Login</button>
   </div>
 </section>
 
@@ -85,7 +74,7 @@
     <div class="form-card form-card-premium">
       <div class="form-header">
         <div class="form-icon-anim">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#FFD700" stroke="#181818" stroke-width="2"/><path d="M24 26c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z" fill="#181818"/><circle cx="24" cy="18" r="6" fill="#181818"/></svg>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" fill="none" stroke="#FFD700" stroke-width="1.5"/><circle cx="20" cy="14" r="4" fill="#FFD700"/><path d="M12 28c0-2 2.6-3.2 8-3.2s8 1.2 8 3.2" fill="none" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
         <h2>Student Login</h2>
         <button class="close-btn" onclick="closeAllForms()">×</button>
@@ -111,12 +100,12 @@
     </div>
   </div>
 
-  <!-- ADMIN LOGIN FORM - High End -->
+  <!-- ADMIN LOGIN FORM -->
   <div class="form-section" id="adminLoginForm">
     <div class="form-card form-card-premium">
       <div class="form-header">
         <div class="form-icon-anim">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#ffe066" stroke="#181818" stroke-width="2"/><path d="M16 32c0-2.21 3.582-4 8-4s8 1.79 8 4v2H16v-2z" fill="#181818"/><rect x="18" y="16" width="12" height="8" rx="4" fill="#181818"/></svg>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" fill="none" stroke="#FFD700" stroke-width="1.5"/><circle cx="20" cy="12" r="3.5" fill="#FFD700"/><path d="M10 26c0-2 2.4-3 10-3s10 1 10 3" fill="none" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round"/><rect x="16" y="18" width="8" height="6" rx="1" fill="none" stroke="#FFD700" stroke-width="1.5"/></svg>
         </div>
         <h2>Admin Login</h2>
         <button class="close-btn" onclick="closeAllForms()">×</button>
@@ -144,12 +133,12 @@
     </div>
   </div>
 
-  <!-- ADMIN SIGNUP FORM - High End -->
+  <!-- ADMIN SIGNUP FORM -->
   <div class="form-section" id="adminSignupForm">
     <div class="form-card form-card-premium">
       <div class="form-header">
         <div class="form-icon-anim">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#FFD700" stroke="#181818" stroke-width="2"/><path d="M16 32c0-2.21 3.582-4 8-4s8 1.79 8 4v2H16v-2z" fill="#181818"/><rect x="18" y="16" width="12" height="8" rx="4" fill="#181818"/></svg>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" fill="none" stroke="#FFD700" stroke-width="1.5"/><circle cx="20" cy="12" r="3.5" fill="#FFD700"/><path d="M10 26c0-2 2.4-3 10-3s10 1 10 3" fill="none" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round"/><rect x="16" y="18" width="8" height="6" rx="1" fill="none" stroke="#FFD700" stroke-width="1.5"/></svg>
         </div>
         <h2>Admin Sign Up</h2>
         <button class="close-btn" onclick="closeAllForms()">×</button>
@@ -260,10 +249,12 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-content">
-    <p>&copy; 2025 My Mess. All Rights Reserved.</p>
-    <p class="footer-tagline">Made for Students, by Students</p>
+  <div class="footer-logo-section">
+    <img src="logo1.png" alt="My Mess Logo" class="footer-logo" />
+    <span class="footer-brand">My Mess</span>
   </div>
+  <p class="footer-copyright">&copy; 2025 My Mess. All Rights Reserved.</p>
+  <p class="footer-tagline">Made for Students, by Students</p>
 </footer>
 
 <!-- JAVASCRIPT -->

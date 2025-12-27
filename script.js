@@ -63,12 +63,12 @@ function showForm(formElement) {
   
   // Show the selected form
   formElement.classList.add('active');
-  formsContainer.classList.add('show');
+  formsContainer.classList.add('active');
 }
 
 // Close all forms
 function closeAllForms() {
-  formsContainer.classList.remove('show');
+  formsContainer.classList.remove('active');
   document.querySelectorAll('.form-section').forEach(section => {
     section.classList.remove('active');
   });
