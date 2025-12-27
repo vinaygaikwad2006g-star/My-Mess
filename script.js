@@ -380,4 +380,78 @@ if (adminCodeField) {
   });
 }
 
+
+// ===================================
+// HERO SLIDESHOW / CAROUSEL
+// ===================================
+
+let slideIndex = 1;
+let slideTimer = null;
+
+function showSlides(n) {
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  if (!slides.length) return;
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    slide.style.display = 'none';
+  });
+  dots.forEach(dot => dot.classList.remove('active'));
+  slides[slideIndex - 1].classList.add('active');
+  slides[slideIndex - 1].style.display = 'block';
+  if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add('active');
+}
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+  resetSlideTimer();
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+  resetSlideTimer();
+}
+
+function autoSlide() {
+  slideIndex++;
+  showSlides(slideIndex);
+  slideTimer = setTimeout(autoSlide, 4000);
+}
+
+function resetSlideTimer() {
+  if (slideTimer) clearTimeout(slideTimer);
+  slideTimer = setTimeout(autoSlide, 4000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  showSlides(slideIndex);
+  slideTimer = setTimeout(autoSlide, 4000);
+  // Touch swipe support for mobile
+  let xDown = null;
+  let yDown = null;
+  const container = document.querySelector('.slideshow-container');
+  if (container) {
+    container.addEventListener('touchstart', function(evt) {
+      const firstTouch = evt.touches[0];
+      xDown = firstTouch.clientX;
+      yDown = firstTouch.clientY;
+    }, false);
+    container.addEventListener('touchmove', function(evt) {
+      if (!xDown || !yDown) return;
+      let xUp = evt.touches[0].clientX;
+      let yUp = evt.touches[0].clientY;
+      let xDiff = xDown - xUp;
+      let yDiff = yDown - yUp;
+      if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 0) plusSlides(1); // swipe left
+        else plusSlides(-1); // swipe right
+      }
+      xDown = null;
+      yDown = null;
+    }, false);
+  }
+});
+
 console.log('My Mess - Frontend Initialized Successfully ✓');
